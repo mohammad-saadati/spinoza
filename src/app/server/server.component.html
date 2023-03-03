@@ -1,0 +1,11 @@
+<h1>{{name}}</h1>
+<p class="">Server component******************************************</p>
+<button [disabled]="disableBtn" (click)="onClickButton()">{{disableBtn}}</button>
+<h6>{{announcement}}</h6>
+<input type="text" (input)="onUpdateservername($event)">
+<input type="text" [(ngModel)]="name" placeholder="two way binding">
+<p *ngIf="isRenderd; else notRenerd">renderd</p>
+<ng-template #notRenerd><p>not renderd</p></ng-template>
+<button (click)="showParagraph()">{{isRenderd ? "show paragraph" : "hide paragraph" }}</button>
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{iswhite: isRenderd}">change color ngStyle</p>
+
